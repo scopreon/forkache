@@ -1,3 +1,5 @@
+![PyPI - Version](https://img.shields.io/pypi/v/forkache)
+
 # forkache
 
 A simple cache invalidation library for Python that automatically clears cached values when your process forks.
