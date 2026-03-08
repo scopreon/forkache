@@ -1,0 +1,55 @@
+[project]
+name = "forkache"
+version = "0.0.1"
+authors = [
+  { name="Saul Cooperman", email="saulcoops@gmail.com" },
+]
+description = "A simple at-fork cache invalidation library"
+readme = "README.md"
+requires-python = ">=3.13"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/scopreon/forkache"
+Issues = "https://github.com/scopreon/forkache/issues"
+
+[build-system]
+requires = ["uv_build >= 0.10.7, <0.11.0"]
+build-backend = "uv_build"
+
+[tool.mypy]
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+[tool.ruff]
+line-length = 80
+
+[tool.ruff.lint]
+select = ["E", "F"]
+
+[dependency-groups]
+dev = []
+lint = [
+    "mypy>=1.19.1",
+    "ruff>=0.15.5",
+]
+test = [
+    "cachetools>=7.0.3",
+    "pytest>=9.0.2",
+]
